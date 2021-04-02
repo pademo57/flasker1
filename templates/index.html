@@ -1,0 +1,37 @@
+<h1>Hello World</h1>
+
+<p>This is my first web page</p>
+
+<p>My name is {{ first_name }}</p>
+
+<!-- The html tags come from hello.py 
+Without the filtes shows all the hmtl tags -->
+<p> {{ stuff }}
+
+<!--	Allows html tags to work --> 
+<p>{{ stuff|safe }}</p>
+
+<!-- Removes all html tags without showing them -->
+<p>{{ stuff|striptags }}</p>
+
+<h3>Using a for loop</h3>
+{% for topping in favorite_pizza %}
+	{{ topping}}<br/>
+{% endfor %}
+
+<p> First item: {{ favorite_pizza.0 }}</p>
+
+<p> Last item + 10: {{ favorite_pizza.3 + 10 }}</p>
+
+<h3>Using a if loop inside a for loop</h3>
+{% for topping in favorite_pizza %}
+	{% if topping == 41 %}
+		{{ topping + 100 }}<br/>
+	{% else %}
+		{{ topping}}<br/>
+	{% endif %}
+{% endfor %}
+
+<p> First item: {{ favorite_pizza.0 }}</p>
+
+<p> Last item + 10: {{ favorite_pizza.3 + 10 }}</p>
